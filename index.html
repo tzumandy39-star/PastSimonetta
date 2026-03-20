@@ -87,22 +87,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
-        .buscador {
-            padding: 6px;
-            border-radius: 20px;
-            border: none;
-        }
-
-        .boton {
-            padding: 6px 10px;
-            border: none;
-            border-radius: 20px;
-            background: #ff9fbc;
-            color: white;
-            cursor: pointer;
-        }
-
+        
         .info {
             background: #e8f6f3;
             display: flex;
@@ -300,9 +285,6 @@
             </div>
 
         </div><a href="#contacto">Contacto</a>
-
-        <input class="buscador" id="buscar" type="text" placeholder="Buscar producto" onkeyup="buscar()">
-        <button class="boton" onclick="buscar()">🔎</button>
     </nav>
     <div class="info">
         <div>🍰 Pasteles personalizados</div>
@@ -379,24 +361,6 @@
         function toggleMenu() {
             document.querySelector("nav").classList.toggle("show");
         }
-
-        function buscar() {
-            let input = document.getElementById("buscar").value.toLowerCase();
-            let cards = document.querySelectorAll(".card");
-
-            cards.forEach(function (card) {
-                let texto = card.innerText.toLowerCase();
-
-                if (input === "") {
-                    card.style.display = "";
-                } else if (texto.includes(input)) {
-                    card.style.display = "";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        }
-
         document.querySelectorAll(".dropdown > a").forEach(function (btn) {
             btn.addEventListener("click", function (e) {
                 if (window.innerWidth <= 600) {
